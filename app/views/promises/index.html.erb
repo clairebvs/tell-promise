@@ -1,0 +1,13 @@
+<h1>Look at all your promises</h1>
+
+<ul id="promises">
+  <% @promises.each do |promise| %>
+    <li>
+      <div id='promise-<%= promise.id %>'>
+      <%= promise.description %>
+      <%= promise.author %>
+      <%= button_to 'Delete', promise_path(promise.id), method: :delete %>
+      </div>
+    </li>
+  <% end %>
+</ul>
